@@ -28,6 +28,7 @@ function configurePackage(api) {
   api.use('random');
   api.addFiles([
     'client/login_state.js',
+    'client/auto_login.js',
     'lib/login_state.js',
     'lib/auto_connect.js'
   ], 'client');
