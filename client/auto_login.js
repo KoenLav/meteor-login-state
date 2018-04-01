@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import LoginState from './login_state';
 
 if (!Meteor.userId()) {
-  const loginState = LoginState.get('domain-login-state');
+  const loginState = LoginState.get();
 
   if (loginState && loginState.loginToken && loginState.userId && loginState.loginTokenExpires) {
     window.localStorage['Meteor.loginToken'] = loginState.loginToken;
