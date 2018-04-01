@@ -4,7 +4,7 @@ import './client/auto_connect';
 import './client/auto_login';
 
 checkNpmVersions({
-  'js-cookie': '2.2.x',
+  'js-cookie': '^2.2.0',
 }, 'kadira:login-state');
 
 export default LoginState;
