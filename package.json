@@ -1,6 +1,6 @@
 {
   "name": "meteor-login-state",
-  "version": "1.2.0",
+  "version": "1.4.0",
   "description": "NodeJS module to access meteor login state",
   "main": "client/login_state.js",
   "scripts": {
@@ -20,7 +20,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kadirahq/meteor-login-state"
+    "url": "https://github.com/koenlav/meteor-login-state"
   },
-  "homepage": "https://github.com/kadirahq/meteor-login-state"
+  "homepage": "https://github.com/koenlav/meteor-login-state"
 }

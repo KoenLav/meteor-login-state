@@ -1,18 +1,17 @@
+import { Meteor } from 'meteor/meteor';
+import LoginState from './login_state';
+
 Meteor.startup(function () {
-    const config = Meteor.settings && Meteor.settings.public && Meteor.settings.public.loginState;
+  const config = Meteor.settings && Meteor.settings.public && Meteor.settings.public.loginState;
 
-    if (config) {
-        let getCustomData = null;
+  if (config) {
+    const { getCustomData = null } = LoginState;
 
-        if (LoginState.getCustomData) {
-            getCustomData = LoginState.getCustomData;
-        }
-
-        LoginState.init(
-            config.domain,
-            config.cookieName,
-            config.maxage,
-            getCustomData,
-        );
-    }
+    LoginState.init(
+      config.domain,
+      config.cookieName,
+      config.maxage,
+      getCustomData,
+    );
+  }
 });
