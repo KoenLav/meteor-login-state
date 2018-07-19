@@ -8,12 +8,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.6.1');
 
-  api.use([
-    'ecmascript',
-    'meteor',
-    'tracker',
-    'tmeasday:check-npm-versions@0.3.2',
-  ]);
+  api.use(['ecmascript', 'meteor', 'tracker', 'tmeasday:check-npm-versions@0.3.2']);
 
   api.mainModule('client.js', 'client');
 });
