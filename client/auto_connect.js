@@ -14,9 +14,9 @@ Meteor.startup(function() {
   if (!Meteor.userId()) {
     const loginState = LoginState.get();
 
-    if (loginState && loginState.loginToken && loginState.userId && loginState.loginTokenExpires) {
-      window.localStorage['Meteor.loginToken'] = loginState.loginToken;
+    if (loginState && loginState.userId && loginState.loginToken && loginState.loginTokenExpires) {
       window.localStorage['Meteor.userId'] = loginState.userId;
+      window.localStorage['Meteor.loginToken'] = loginState.loginToken;
       window.localStorage['Meteor.loginTokenExpires'] = loginState.loginTokenExpires;
     }
   }
