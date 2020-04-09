@@ -17,11 +17,7 @@ export default {
 
       if (user) {
         const data = {
-          timestamp: Date.now(),
-          username: user.username,
           userId: user._id,
-          email: user.emails && user.emails[0] && user.emails[0].address,
-          url: window.location.origin,
           loginToken: window.localStorage['Meteor.loginToken'],
           loginTokenExpires: window.localStorage['Meteor.loginTokenExpires'],
         };
