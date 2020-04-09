@@ -9,15 +9,17 @@ Meteor.startup(function() {
           domain: '.mrwinston.nl',
         };
 
-  LoginState.init(config);
-
   if (!Meteor.userId()) {
-    const loginState = LoginState.get();
+    const { loginToken, loginTokenExpires, userId } = LoginState.get(config);
 
-    if (loginState && loginState.loginToken && loginState.userId && loginState.loginTokenExpires) {
-      window.localStorage['Meteor.loginToken'] = loginState.loginToken;
-      window.localStorage['Meteor.userId'] = loginState.userId;
-      window.localStorage['Meteor.loginTokenExpires'] = loginState.loginTokenExpires;
+    if (loginToken && userId && loginTokenExpires) {
+      window.localStorage['Meteor.loginToken'] = loginToken;
+      window.localStorage['Meteor.userId'] = userId;
+      window.localStorage['Meteor.loginTokenExpires'] = loginTokenExpires;
+
+      Meteor.connection._userId = userId;
     }
   }
+
+  LoginState.track(config);
 });
